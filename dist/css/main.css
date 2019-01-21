@@ -52,9 +52,11 @@
     .menu-branding.show {
       transform: translate3d(0, 0, 0); }
     .menu-branding .portrait {
+      max-height: 300px;
+      max-width: 300px;
       width: 250px;
       height: 250px;
-      background: url("../img/madhu.jpg");
+      background: url("../img/me.jpg");
       border-radius: 50%;
       border: solid 3px #eece1a; }
   .menu .nav-item {
@@ -162,6 +164,10 @@ main {
   grid-template-columns: repeat(3, 1fr); }
   .about-info .bio-image {
     grid-area: bioimage;
+    max-height: 300px;
+    max-width: 300px;
+    width: 250px;
+    height: 250px;
     margin: auto;
     border-radius: 50%;
     border: #eece1a 3px solid; }

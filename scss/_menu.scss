@@ -87,9 +87,11 @@
     }
 
     .portrait {
+      max-height: 300px;
+      max-width: 300px;
       width: 250px;
       height: 250px;
-      background: url("../img/madhu.jpg");
+      background: url("../img/me.jpg");
       border-radius: 50%;
       border: solid 3px $secondary-color;
     }
