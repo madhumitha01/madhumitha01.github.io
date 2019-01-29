@@ -293,3 +293,7 @@ main {
       font-size: 3rem; }
   .projects {
     grid-template-columns: 1fr; } }
+
+@media only screen and (max-width: 368px) {
+  .img {
+    width: 100vw; } }

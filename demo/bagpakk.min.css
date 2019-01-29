@@ -1,0 +1,23 @@
+/*! Bagpakk v1.0.0b | Constantin Saguin csag.co | MIT License | github.com/brutaldesign/bagpakk */
+
+a > img {
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -ms-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+a > img:hover {
+  opacity: 0.8;
+}
+
+.wrap {
+  margin: 0 auto;
+  max-width: 1140px;
+  width: 92%;
+}
+
+.small-width {
+  max-width: 740px;
+}

@@ -11,8 +11,31 @@
       crossorigin="anonymous"
     />
 
-    <link rel="stylesheet" href="css/main.css" />
 
+    <link rel="stylesheet" href="css/main.css" />
+    
+    <link rel="stylesheet" href="demo/bagpakk.min.css" />
+    <link rel="stylesheet" href="demo/style.css" />
+    <link rel="stylesheet" href="src/css/swipebox.css" />
+<!-- share buttons -->
+<script type="text/javascript">
+  (function (doc, script) {
+    var js,
+      fjs = doc.getElementsByTagName(script)[0],
+      add = function (url, id) {
+        if (doc.getElementById(id)) {
+          return;
+        }
+        js = doc.createElement(script);
+        js.src = url;
+        id && (js.id = id);
+        fjs.parentNode.insertBefore(js, fjs);
+      };
+    add("//connect.facebook.net/en_US/all.js#xfbml=1", "facebook-jssdk");
+    add("//platform.twitter.com/widgets.js", "twitter-wjs");
+  })(document, "script");
+</script>
+<!-- end share buttons -->
 </head>
     <link href="css/imagehover.min.css" rel="stylesheet" media="all" />
     <title>View My Sketches</title>
@@ -48,18 +71,105 @@
       </nav>
     </header>
 
-    <main id="sketch">
+    <main id="work">
       <h1 class="lg-heading">
         My <span class="text-secondary">Sketches</span>
       </h1>
 
       <h2 class="sm-heading">Check out my sketches here...</h2>
-      <h1>Sorry will update it soon! :")</h1>
+      
       
     </main>
+    <section id="exemple" class="container">
+      
+       
+      <div class="wrap small-width">
+        <div id="try"></div>
+      
+        
+        <ul id="box-container">
+          
+          <li class="box">
+            <a href="img/w1.jpg" class="swipebox" title="Fog">
+              <img src="img/madhu.jpg" alt="image" />
+            </a>
+          </li>
+          <li class="box">
+            <a href="http://swipebox.csag.co/images/image-1.jpg" class="swipebox" title="Fog">
+              <img src="http://swipebox.csag.co/images/image-1.jpg" alt="image" />
+            </a>
+          </li>
+          <li class="box">
+            <a href="http://swipebox.csag.co/images/image-1.jpg" class="swipebox" title="Fog">
+              <img src="http://swipebox.csag.co/images/image-1.jpg" alt="image" />
+            </a>
+          </li>
+          <li class="box">
+            <a href="http://swipebox.csag.co/images/image-1.jpg" class="swipebox" title="Fog">
+              <img src="http://swipebox.csag.co/images/image-1.jpg" alt="image" />
+            </a>
+          </li>
+          <li class="box">
+            <a href="http://swipebox.csag.co/images/image-1.jpg" class="swipebox" title="Fog">
+              <img src="http://swipebox.csag.co/images/image-1.jpg" alt="image" />
+            </a>
+          </li>
+          <li class="box">
+            <a href="http://swipebox.csag.co/images/image-1.jpg" class="swipebox" title="Fog">
+              <img src="http://swipebox.csag.co/images/image-1.jpg" alt="image" />
+            </a>
+          </li>
+          <li class="box">
+            <a href="http://swipebox.csag.co/images/image-2.jpg" class="swipebox" title="City">
+              <img src="http://swipebox.csag.co/images/image-2.jpg" alt="image" />
+            </a>
+          </li>
+          <li class="box">
+            <a href="http://swipebox.csag.co/images/image-3.jpg" class="swipebox" title="Street">
+              <img src="http://swipebox.csag.co/images/image-3.jpg" alt="image" />
+            </a>
+          </li>
+          <li class="box">
+            <a href="http://swipebox.csag.co/images/image-4.jpg" class="swipebox" title="Mustache Guy">
+              <img src="http://swipebox.csag.co/images/image-4.jpg" alt="image" />
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      </div>
+      
+    </section>
+    
+    <script src="lib/ios-orientationchange-fix.js"></script>
+    <script src="lib/jquery-2.1.0.min.js"></script>
+    <script src="src/js/jquery.swipebox.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        /* Basic Gallery */
+        $(".swipebox").swipebox();
 
-    <footer id="main-footer">Copyright &copy; 2019</footer>
-   
+        /* Video */
+        $(".swipebox-video").swipebox();
+
+        /* Dynamic Gallery */
+        $("#gallery").click(function (e) {
+          e.preventDefault();
+          $.swipebox([
+            {
+              href: "http://swipebox.csag.co/mages/image-1.jpg",
+              title: "My Caption"
+            },
+            {
+              href: "http://swipebox.csag.co/images/image-2.jpg",
+              title: "My Second Caption"
+            }
+          ]);
+        });
+      });
+    </script>
+
+    
     <script src="js/main.js"></script>
   </body>
 </html>

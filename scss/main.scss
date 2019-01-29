@@ -183,6 +183,7 @@ main {
 
 .btn-light {
   @extend .btn;
+  //width: 100%;
   background: lighten($primary-color, 50);
   color: #333;
 }
@@ -195,3 +196,8 @@ main {
   height: 60px;
 }
 @import "mobile";
+@media only screen and(max-width:368px) {
+  .img {
+    width: 100vw;
+  }
+}
