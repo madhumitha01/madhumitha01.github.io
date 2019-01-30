@@ -53,6 +53,11 @@
   }
 
   .about-info {
+    .bio {
+      grid-area: bio;
+      font-size: 1000000px;
+    }
+
     grid-template-areas:
       "bioimage"
       "bio"
