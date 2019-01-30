@@ -34,7 +34,8 @@ d body img {
 .box a {
   display: block;
   width: 100%;
-  height: auto;
+
+  height: 20rem;
 }
 .box a img {
   -webkit-back-visibility: hidden;
@@ -42,7 +43,7 @@ d body img {
 
   width: 100%;
 
-  height: auto;
+  height: 20rem;
   vertical-align: bottom;
 }
 @media screen and (max-width: 799px) {
