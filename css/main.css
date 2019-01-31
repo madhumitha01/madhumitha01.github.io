@@ -49,7 +49,7 @@
 .menu-nav {
   margin: 0;
   padding: 0;
-  background: rgba(29, 28, 28, 0.9);
+  background: rgba(29, 31, 32, 0.9);
   list-style: none;
   transform: translate3d(0, -100%, 0);
   transition: all 0.5s ease-out;
@@ -124,11 +124,11 @@ body {
   color: rgb(225, 223, 243);
   min-height: calc(100vh - 60px);
   margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: cursive;
   line-height: 1.5;
 }
 body#bg-img {
-  background: url(../img/img1.jpg);
+  background: url(../img/i4a.jpg);
   background-attachment: fixed;
   background-size: cover;
 }
@@ -218,16 +218,20 @@ main#home h1 {
 }
 .about-info .bio {
   grid-area: bio;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  text-align: justify;
 }
 .about-info .job-1 {
   grid-area: job1;
+  text-align: justify;
 }
 .about-info .job-2 {
   grid-area: job2;
+  text-align: justify;
 }
 .about-info .job-3 {
   grid-area: job3;
+  text-align: justify;
 }
 .about-info .job {
   background: #515151;
@@ -279,8 +283,9 @@ main#home h1 {
 .btn,
 .btn-dark,
 .btn-light {
-  display: block;
+  display: inline-block;
   padding: 0.5rem 1rem;
+  width: 300px;
   border: 0;
   margin-bottom: 0.3rem;
 }
@@ -292,7 +297,7 @@ main#home h1 {
 }
 
 .btn-dark {
-  background: black;
+  background: #0099cc;
   color: #fff;
 }
 
