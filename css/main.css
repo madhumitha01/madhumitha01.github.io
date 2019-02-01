@@ -124,7 +124,7 @@ body {
   color: rgb(225, 223, 243);
   min-height: calc(100vh - 60px);
   margin: 0;
-  font-family: cursive;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5;
 }
 body#bg-img {
