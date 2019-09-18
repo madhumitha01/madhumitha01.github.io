@@ -280,6 +280,34 @@ main#home h1 {
   color: #000;
 }
 
+.button01 {
+  width: 100%;
+  display: inline-block;
+  padding: 0.5em 1.4em;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.15em;
+  box-sizing: border-box;
+  text-decoration: none;
+  border-radius: 12px;
+  font-size: 17px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: white;
+
+  background-color: #668fff;
+  box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+  text-align: center;
+  position: relative;
+}
+
+.button01:hover {
+  border-color: #668fff;
+  background: rgb(24, 127, 223);
+  color: whitesmoke;
+}
+
 .btn,
 .btn-dark,
 .btn-light {
