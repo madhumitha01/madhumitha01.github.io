@@ -11,8 +11,74 @@
       crossorigin="anonymous"
     />
 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css"
+    />
+
     <link rel="stylesheet" href="css/main.css" />
     <title>Contact Me</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      function handleClick() {
+        var url =
+          "https://script.google.com/macros/s/AKfycbzPys-MWoJevKacNT96-nNZkl_rAzc9kSj9709Pzw/exec"; // the script where you handle the form input.
+        //alert("Thankyou for your response!!!!");
+        $.post({
+          type: "POST",
+          url: url,
+          data: $("#idForm").serialize(), // serializes the form's elements.
+          success: function(data) {
+            alert("Thank you for your message!!");
+            //alert(data); // show response from the php script.
+          }
+        });
+      }
+    </script>
+    <script>
+      function validate() {
+        var name = document.getElementById("name").value;
+        var subject = document.getElementById("subject").value;
+        var phone = document.getElementById("phone").value;
+        var email = document.getElementById("email").value;
+        var message = document.getElementById("message").value;
+        var error_message = document.getElementById("error_message");
+
+        error_message.style.padding = "10px";
+
+        var text;
+        if (name.length < 5) {
+          text = "Please Enter valid Name";
+          error_message.innerHTML = text;
+          return false;
+        }
+        if (subject.length < 1) {
+          text = "Please Enter Correct Organisation";
+          error_message.innerHTML = text;
+          return false;
+        }
+        if (isNaN(phone) || phone.length != 10) {
+          text = "Please Enter valid Phone Number";
+          error_message.innerHTML = text;
+          return false;
+        }
+        if (email.indexOf("@") == -1 || email.length < 6) {
+          text = "Please Enter valid Email";
+          error_message.innerHTML = text;
+          return false;
+        }
+        if (message.length <= 20) {
+          text = "Please Enter More Than 20 Characters";
+          error_message.innerHTML = text;
+          return false;
+        }
+        text = "Form Submitted Successfully!";
+        error_message.innerHTML = text;
+        //alert("Form Submitted Successfully!");
+        return true;
+      }
+    </script>
   </head>
 
   <body>
@@ -48,15 +114,65 @@
     <main id="contact">
       <h1 class="lg-heading">Contact <span class="text-secondary">Me</span></h1>
       <h2 class="sm-heading">This is how you can reach me...</h2>
-      <div class="boxes">
-        <div>
-          <span class="text-secondary">Email: </span> madhumitharajinikanthan
-          @gmail.com
-        </div>
-        <div><span class="text-secondary">Phone: </span> Avoiding spam</div>
-        <div>
-          <span class="text-secondary">Address: </span> New Horizon College of
-          Engineering, Outer ring road, B'lore- 560017
+
+      <div class="container-b">
+        <div class="wrapper animated bounceInLeft">
+          <div class="company-info">
+            <ul>
+              <div class="boxes">
+                <div>
+                  <span class="text-secondary">Email: </span>
+                  madhumitharajinikanthan@gmail.com
+                </div>
+                <div>
+                  <span class="text-secondary">Phone: </span> Avoiding spam
+                </div>
+                <div>
+                  <span class="text-secondary">Address: </span> New Horizon
+                  College of Engineering, Outer ring road, Bangalore- 560017
+                </div>
+              </div>
+            </ul>
+          </div>
+
+          <div class="contact">
+            <h3>
+              Let's get in touch
+            </h3>
+            <br />
+            <div id="error_message"></div>
+            <form
+              id="idForm"
+              name="idForm"
+              method="POST"
+              action="javascript:handleClick()"
+              onsubmit="return validate();"
+            >
+              <p>
+                <label>Name</label>
+                <input type="text" name="name" id="name" />
+              </p>
+              <p>
+                <label>Organisation</label>
+                <input type="text" name="company" id="subject" />
+              </p>
+              <p>
+                <label>Email Address</label>
+                <input type="email" name="email" id="email" />
+              </p>
+              <p>
+                <label>Phone Number</label>
+                <input type="text" name="phone" id="phone" />
+              </p>
+              <p class="full">
+                <label>Message</label>
+                <textarea name="message" rows="5" id="message"></textarea>
+              </p>
+              <p class="full">
+                <button>SUBMIT</button>
+              </p>
+            </form>
+          </div>
         </div>
       </div>
     </main>
