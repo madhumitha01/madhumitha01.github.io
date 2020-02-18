@@ -11,7 +11,74 @@
       crossorigin="anonymous"
     />
 
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:200,100,400"
+      rel="stylesheet"
+      type="text/css"
+    />
+
     <link rel="stylesheet" href="css/main.css" />
+    <script>
+      var TxtRotate = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = "";
+        this.tick();
+        this.isDeleting = false;
+      };
+
+      TxtRotate.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+          this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+          this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">' + this.txt + "</span>";
+
+        var that = this;
+        var delta = 300 - Math.random() * 100;
+
+        if (this.isDeleting) {
+          delta /= 2;
+        }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+          delta = this.period;
+          this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === "") {
+          this.isDeleting = false;
+          this.loopNum++;
+          delta = 500;
+        }
+
+        setTimeout(function() {
+          that.tick();
+        }, delta);
+      };
+
+      window.onload = function() {
+        var elements = document.getElementsByClassName("txt-rotate");
+        for (var i = 0; i < elements.length; i++) {
+          var toRotate = elements[i].getAttribute("data-rotate");
+          var period = elements[i].getAttribute("data-period");
+          if (toRotate) {
+            new TxtRotate(elements[i], JSON.parse(toRotate), period);
+          }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML =
+          ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+        document.body.appendChild(css);
+      };
+    </script>
     <title>Welcome To My Portfolio</title>
   </head>
 
@@ -50,7 +117,15 @@
       <h1 class="lg-heading">
         Madhumitha <span class="text-secondary">Rajinikanthan</span>
       </h1>
-      <h2 class="sm-heading">Programmer, Basketball player & an Artist</h2>
+      <h2 class="sm-heading">
+        I am a
+        <span
+          style="font-weight: 600; color: lightyellow;"
+          class="txt-rotate"
+          data-period="1000"
+          data-rotate='[ "programmer.", "basketball player.", "sketch artist.", "blogger.", "design enthusiast." ]'
+        ></span>
+      </h2>
       <div class="icons">
         <a href="https://www.linkedin.com/in/madhumitha01/">
           <i class="fab fa-linkedin-in fa-2x"></i>
