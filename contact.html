@@ -49,30 +49,37 @@
 
         var text;
         if (name.length < 5) {
+          error_message.style.backgroundColor = "red";
           text = "Please Enter valid Name";
           error_message.innerHTML = text;
           return false;
         }
         if (subject.length < 1) {
+          error_message.style.backgroundColor = "red";
           text = "Please Enter Correct Organisation";
           error_message.innerHTML = text;
           return false;
         }
-        if (isNaN(phone) || phone.length != 10) {
-          text = "Please Enter valid Phone Number";
-          error_message.innerHTML = text;
-          return false;
-        }
         if (email.indexOf("@") == -1 || email.length < 6) {
+          error_message.style.backgroundColor = "red";
           text = "Please Enter valid Email";
           error_message.innerHTML = text;
           return false;
         }
-        if (message.length <= 20) {
-          text = "Please Enter More Than 20 Characters";
+        if (isNaN(phone) || phone.length != 10) {
+          error_message.style.backgroundColor = "red";
+          text = "Please Enter valid Phone Number";
           error_message.innerHTML = text;
           return false;
         }
+
+        if (message.length <= 10) {
+          error_message.style.backgroundColor = "red";
+          text = "Please Enter More Than 10 Characters";
+          error_message.innerHTML = text;
+          return false;
+        }
+        error_message.style.backgroundColor = "green";
         text = "Form Submitted Successfully!";
         error_message.innerHTML = text;
         //alert("Form Submitted Successfully!");
@@ -125,7 +132,7 @@
                   madhumitharajinikanthan@gmail.com
                 </div>
                 <div>
-                  <span class="text-secondary">Phone: </span> Avoiding spam
+                  <span class="text-secondary">Phone: </span> 9880087187
                 </div>
                 <div>
                   <span class="text-secondary">Address: </span> New Horizon
